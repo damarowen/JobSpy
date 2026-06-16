@@ -24,6 +24,7 @@ from jobspy.util import (
     desired_order,
 )
 from jobspy.ziprecruiter import ZipRecruiter
+from jobspy.jobstreet import JobStreet
 
 
 # Update the SCRAPER_MAPPING dictionary in the scrape_jobs function
@@ -63,7 +64,8 @@ def scrape_jobs(
         Site.GOOGLE: Google,
         Site.BAYT: BaytScraper,
         Site.NAUKRI: Naukri,
-        Site.BDJOBS: BDJobs,  # Add BDJobs to the scraper mapping
+        Site.BDJOBS: BDJobs,
+        Site.JOBSTREET: JobStreet,
     }
     set_logger_level(verbose)
     job_type = get_enum_from_value(job_type) if job_type else None
